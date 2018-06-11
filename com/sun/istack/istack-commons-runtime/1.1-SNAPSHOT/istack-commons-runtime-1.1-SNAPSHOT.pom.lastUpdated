@@ -1,8 +1,8 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Mon Jun 11 09:48:31 CST 2018
-http\://repository.apache.org/snapshots/.lastUpdated=1528681709250
-http\://igti-nexus.lab.wagerworks.com/content/groups/public/.lastUpdated=1528681708104
-http\://download.java.net/maven/2/.lastUpdated=1528681711883
+#Mon Jun 11 13:30:00 CST 2018
+http\://repository.apache.org/snapshots/.lastUpdated=1528694996910
+http\://igti-nexus.lab.wagerworks.com/content/groups/public/.lastUpdated=1528694996173
+http\://download.java.net/maven/2/.lastUpdated=1528695000744
 http\://igti-nexus.lab.wagerworks.com/content/groups/public/.error=
 http\://download.java.net/maven/2/.error=
 http\://repository.apache.org/snapshots/.error=
