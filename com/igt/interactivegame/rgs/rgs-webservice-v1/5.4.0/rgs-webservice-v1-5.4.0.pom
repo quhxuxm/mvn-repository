@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-webservice</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-webservice-v1</artifactId>
+    <packaging>pom</packaging>
+    <name>IGT Interactive Game - RGS Hosted WebService V1</name>
+    <modules>
+        <module>rgs-webservice-v1-library</module>
+        <module>rgs-webservice-v1-library-wsgen</module>
+        <module>rgs-webservice-v1-web</module>
+    </modules>
+    <properties>
+        <project.root.dir>${basedir}/../..</project.root.dir>
+    </properties>
+</project>

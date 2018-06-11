@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-library</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-library-tomcat-cipher</artifactId>
+    <name>IGT Interactive Game - RGS Library Tomcat Cipher</name>
+    <description>IGT Interactive Game - RGS Library Tomcat Cipher</description>
+    <packaging>jar</packaging>
+    <properties>
+        <project.root.dir>${basedir}/../..</project.root.dir>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.igt.interactive.util</groupId>
+            <artifactId>cipher</artifactId>
+        </dependency>
+        <!-- for tomcat-users.xml -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>8.0.20</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Unit test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/generated/dependencies/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-library</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-library-webservice-v1-client</artifactId>
+    <packaging>jar</packaging>
+    <name>IGT Interactive Game - RGS Library - WebService - V1 Client</name>
+    <description>IGT Interactive Game - RGS Library - WebService - V1 Client</description>
+    <properties>
+        <project.root.dir>${basedir}/../..</project.root.dir>
+        <project.type.platform.app> false</project.type.platform.app>
+        <project.type.admin.app> true</project.type.admin.app>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-webservice-v1-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/classes</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.root.dir}/rgs-webservice/rgs-webservice-v1/rgs-webservice-v1-web/target/rgsWS/WEB-INF</directory>
+                                    <includes>
+                                        <include>wsdl/RGSWebService*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    <wsdlDirectory>${basedir}/target/classes/wsdl</wsdlDirectory>
+                    <keep>true</keep>
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                    </vmArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>RGSWebService</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <wsdlLocation>wsdl/RGSWebService.wsdl</wsdlLocation>
+                            <packageName>com.wagerworks.rgs.client</packageName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

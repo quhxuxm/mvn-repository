@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-library</artifactId>
+    <packaging>pom</packaging>
+    <name>IGT Interactive Game - RGS Library</name>
+    <description>IGT Interactive Game - RGS Library</description>
+    <properties>
+        <project.root.dir>${basedir}/..</project.root.dir>
+        <project.type.platform.app>true</project.type.platform.app>
+        <project.type.admin.app>true</project.type.admin.app>
+    </properties>
+    <modules>
+        <module>rgs-library-app-xml-bindings</module>
+        <module>rgs-library-game-xml-bindings</module>
+        <module>rgs-library-build</module>
+        <module>rgs-library-constant</module>
+        <module>rgs-library-ns</module>
+        <module>rgs-library-param-gle</module>
+        <module>rgs-library-param-rgs</module>
+        <module>rgs-library-imptproxy</module>
+        <module>rgs-library-shared</module>
+        <module>rgs-library-gdsproxy</module>
+        <module>rgs-library-webservice-v1-client</module>
+        <module>rgs-library-webservice-v2-client</module>
+        <module>rgs-library-framework</module>
+        <module>rgs-library-util-xml-binding</module>
+        <module>rgs-library-tomcat-cipher</module>
+        <module>rgs-library-odeproxy</module>
+        <module>rgs-library-contextloader</module>
+    </modules>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.igt.microservice.common</groupId>
+  <artifactId>extdb-vo</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20180611051922</lastUpdated>
+  </versioning>
+</metadata>

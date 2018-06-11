@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-test-mock-imptservice</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <properties>
+        <project.root>${basedir}/../../..</project.root>
+    </properties>
+    <artifactId>rgs-test-mock-imptservice-wsdltojava</artifactId>
+    <name>IGT Interactive Game - RGS Test - Mock IMPT Service - WSDL To Java</name>
+    <description>IGT Interactive Game - RGS Test - Mock IMPT Service - WSDL To Java</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    <resourceDestDir>${basedir}/src/main/java</resourceDestDir>
+                    <wsdlDirectory>${project.root}/rgs-library/rgs-library-imptproxy/rgs-library-imptproxy-connector/src/main/resources/wsdl</wsdlDirectory>
+                    <keep>true</keep>
+                    <extension>true</extension>
+                    <verbose>true</verbose>
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                    </vmArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>InteractiveIMptService</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>mpt-interactive-soap.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>wsdl/mpt-interactive-soap.wsdl</wsdlLocation>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

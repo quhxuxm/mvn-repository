@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-library</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-library-build</artifactId>
+    <name>IGT Interactive Game - RGS Library - Build</name>
+    <description>IGT Interactive Game - RGS Library - Build</description>
+    <properties>
+        <project.root.dir>${basedir}/../..</project.root.dir>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.util</groupId>
+            <artifactId>com.igt.util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-library-util-xml-binding</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+        </dependency>
+    </dependencies>
+</project>

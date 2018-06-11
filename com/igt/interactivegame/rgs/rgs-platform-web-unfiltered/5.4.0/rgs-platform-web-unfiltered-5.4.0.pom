@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-platform</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-platform-web-unfiltered</artifactId>
+    <name>IGT Interactive Game - RGS Platform - Web Library - Unfiltered</name>
+    <description>IGT Interactive Game - RGS Platform - Web Library - Unfiltered</description>
+    <properties>
+        <project.root.dir>${basedir}/../..</project.root.dir>
+        <project.type.platform.web> true</project.type.platform.web>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-platform-web-filtered</artifactId>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>portlet-api</artifactId>
+                    <groupId>javax.portlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>myfaces-api</artifactId>
+                    <groupId>myfaces</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.thirdparty</groupId>
+            <artifactId>jamon</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-library-shared</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>stax-api</artifactId>
+                    <groupId>javax.xml.stream</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-platform-library</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>stax-api</artifactId>
+                    <groupId>javax.xml.stream</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.interactivegame.rgs</groupId>
+            <artifactId>rgs-library-constant</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

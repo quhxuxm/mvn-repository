@@ -1,0 +1,215 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.igt.platform.rgs.rng</groupId>
+	<artifactId>rng</artifactId>
+    <version>1.0.0</version> 
+	<packaging>pom</packaging>
+    
+    <properties>
+		<!-- User-rideable settings -->
+		<debug>true</debug>
+		<BUILD_NUMBER>localbuild</BUILD_NUMBER>
+		
+		<!-- System properties! Do not override unless you know what you are doing -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<xmlbeans.version>2.4.0</xmlbeans.version>
+		<resolver.version>20050927</resolver.version>
+		<j2ee.version>1.4</j2ee.version>
+		<jsr173-api.version>1.0</jsr173-api.version>
+		<jsr181-api.version>1.0-MR1</jsr181-api.version>
+		<jsr250-api.version>2.1.1</jsr250-api.version>
+		<jsr311-api.version>1.1.1</jsr311-api.version>
+		<xercesImpl.version>2.7.1</xercesImpl.version>
+		<xml-apis.version>1.3.02</xml-apis.version>
+		<log4j.version>1.2.16</log4j.version>
+		
+		<!-- SCM Settings for maven release plugin -->
+		<scm.p4.user>tanga</scm.p4.user>
+		<scm.p4.host>sf-ops08.corp.wagerworks.com</scm.p4.host>
+		<scm.p4.port>1666</scm.p4.port>
+		<scm.p4.path>//streams_rgs_rng/mainline/sources</scm.p4.path>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.xmlbeans</groupId>
+                <artifactId>xmlbeans</artifactId>
+                <version>${xmlbeans.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.xmlbeans</groupId>
+                <artifactId>xmlbeans-qname</artifactId>
+                <version>${xmlbeans.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.org.apache.xml.internal</groupId>
+                <artifactId>resolver</artifactId>
+                <version>${resolver.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.igt.thirdparty.j2ee</groupId>
+                <artifactId>j2ee</artifactId>
+                <version>${j2ee.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.igt.thirdparty.jsr173-api</groupId>
+                <artifactId>jsr173-api</artifactId>
+                <version>1.0</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>javax.jws</groupId>
+                <artifactId>jsr181-api</artifactId>
+                <version>${jsr181-api.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>sun-jaxws</groupId>
+                <artifactId>jsr250-api</artifactId>
+                <version>${jsr250-api.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>jsr311-api</artifactId>
+                <version>${jsr311-api.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>apache-xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${xercesImpl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>${xml-apis.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+                <type>jar</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+		<repository>
+			<id>central</id>
+			<url>http://igti-nexus.lab.wagerworks.com/content/groups/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<url>http://igti-nexus.lab.wagerworks.com/content/groups/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+    
+    <distributionManagement>
+        <repository>
+          <id>nexus.release</id>
+          <name>Internal Release Repository</name>
+          <url>http://igti-nexus.lab.wagerworks.com/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+          <id>nexus.snapshots</id>
+          <name>Internal Snapshot Repository</name>
+          <url>http://igti-nexus.lab.wagerworks.com/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+	
+	<scm>
+		<developerConnection>scm:perforce:${scm.p4.user}@${scm.p4.host}:${scm.p4.port}:${scm.p4.path}</developerConnection>
+	</scm>
+    
+    <modules>
+		<module>core</module>
+		<module>webapp</module>
+	</modules>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>xmlbeans-maven-plugin</artifactId>
+					<version>2.3.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<debug>${debug}</debug>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							</manifest>
+							<manifestSections>
+								<manifestSection>
+									<name>Release Build Info</name>
+									<manifestEntries>
+										<Build-Number>${BUILD_NUMBER}</Build-Number>
+									</manifestEntries>
+								</manifestSection>
+							</manifestSections>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							</manifest>
+							<manifestSections>
+								<manifestSection>
+									<name>Release Build Info</name>
+									<manifestEntries>
+										<Build-Number>${BUILD_NUMBER}</Build-Number>
+									</manifestEntries>
+								</manifestSection>
+							</manifestSections>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+    
+</project>

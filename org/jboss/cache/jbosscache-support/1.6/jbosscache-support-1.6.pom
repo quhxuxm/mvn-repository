@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jboss.cache</groupId>
+  <artifactId>jbosscache-support</artifactId>
+  <version>1.6</version>
+  <packaging>pom</packaging>
+  <name>JBoss Cache Support Modules</name>
+  <description>Grouping of JBoss Cache support modules</description>
+	<url>http://www.jbosscache.org</url>
+	<organization>
+		<name>JBoss, a division of Red Hat</name>
+		<url>http://labs.jboss.org</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License</name>
+			<url>http://www.gnu.org/copyleft/lesser.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:svn:http://anonsvn.jboss.org/repos/jbosscache</connection>
+		<developerConnection>scm:svn:https://svn.jboss.org/repos/jbosscache</developerConnection>
+		<url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbosscache/</url>
+	</scm>
+	<issueManagement>
+		<system>jira</system>
+		<url>http://jira.jboss.com/jira/browse/JBCACHE</url>
+	</issueManagement>
+	<ciManagement>
+		<system>hudson</system>
+		<url>http://hudson.qa.jboss.com/hudson/view/JBoss%20Cache/</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<address>jbosscache-dev@lists.jboss.org</address>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+	<mailingLists>
+		<mailingList>
+			<name>JBoss Cache Announcements</name>
+			<post>jbosscache-announce@lists.jboss.org</post>
+			<subscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-announce</subscribe>
+			<unsubscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-announce</unsubscribe>
+			<archive>http://lists.jboss.org/pipermail/jbosscache-dev/</archive>
+		</mailingList>
+		<mailingList>
+			<name>JBoss Cache Commit Notificatons</name>
+			<post>jbosscache-commits@lists.jboss.org</post>
+			<subscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-commits</subscribe>
+			<unsubscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-commits</unsubscribe>
+			<archive>http://lists.jboss.org/pipermail/jbosscache-commits/</archive>
+		</mailingList>
+		<mailingList>
+			<name>JBoss Cache Developers</name>
+			<post>jbosscache-dev@lists.jboss.org</post>
+			<subscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-dev</subscribe>
+			<unsubscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-dev</unsubscribe>
+			<archive>http://lists.jboss.org/pipermail/jbosscache-dev/</archive>
+		</mailingList>
+		<mailingList>
+			<name>JBoss Cache Issue Notifications</name>
+			<post>jbosscache-issues@lists.jboss.org</post>
+			<subscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-issues</subscribe>
+			<unsubscribe>https://lists.jboss.org/mailman/listinfo/jbosscache-issues</unsubscribe>
+			<archive>http://lists.jboss.org/pipermail/jbosscache-issues/</archive>
+		</mailingList>
+	</mailingLists>
+  <developers>
+     <developer>
+       <id>placeholder</id>
+     </developer>
+   </developers>
+  <modules>
+    <module>xslt</module>
+    <module>common</module>
+  </modules>
+  <build>
+    <!-- WebDAV plugin to upload snapshots -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  </build>
+  <properties>
+    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
+    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
+  </properties>
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases</id>
+      <name>JBoss Release Repository</name>
+      <url>${jboss.releases.repo.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>jboss-snapshots</id>
+      <name>JBoss Snapshot Repository</name>
+      <url>${jboss.snapshots.repo.url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>

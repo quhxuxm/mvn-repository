@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.igt.microservice.common</groupId>
+  <artifactId>vo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20180608.064002</timestamp>
+      <buildNumber>205</buildNumber>
+    </snapshot>
+    <lastUpdated>20180608064002</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20180608.064002-205</value>
+        <updated>20180608064002</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20180608.064002-205</value>
+        <updated>20180608064002</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

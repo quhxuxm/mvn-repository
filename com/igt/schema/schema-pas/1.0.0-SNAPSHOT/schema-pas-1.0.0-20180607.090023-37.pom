@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.igt.schema</groupId>
+		<artifactId>schema-parent</artifactId>
+		<relativePath>../schema-parent</relativePath>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>schema-pas</artifactId>
+	<packaging>jar</packaging>
+
+	<name>pas</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.avro</groupId>
+				<artifactId>avro-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>schema</goal>
+						</goals>
+						<configuration>
+							<sourceDirectory>${project.basedir}/src/main/resources/schema/avro/v1/</sourceDirectory>
+							<imports>
+								<!-- Session -->
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/channel-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/client-info.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/currency-info.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/technology-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/presentation-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/game-info.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/player-protection-info.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/product-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/session-action.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/session-status.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/session-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/session/session-summary.avsc</import>
+								
+								<!-- Wallet -->
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/property-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-property.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/restriction-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-fund-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-status.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-balance.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet-restriction.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/wallet.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/wallet/create-request-info.avsc</import>
+								
+								
+								
+								<!-- Transaction -->
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/adjustment-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/transaction-status.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/transaction-type.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/transaction-summary.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/wallet-transaction-totals.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/adjustment-request.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/adjustment-response.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/wallet-transaction.avsc</import>
+								<import>${project.basedir}/src/main/resources/schema/avro/v1/transaction/wallet-transaction-request.avsc</import>
+								
+							</imports>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

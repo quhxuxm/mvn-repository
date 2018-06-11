@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs-library-imptproxy</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-library-imptproxy-connector</artifactId>
+    <name>IGT Interactive Game - RGS Library - IMPT Proxy Connector</name>
+    <description>IGT Interactive Game - RGS Library - IMPT Proxy Connector</description>
+    <properties>
+        <project.root>${basedir}/../../..</project.root>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    <resourceDestDir>${basedir}/src/main/java</resourceDestDir>
+                    <wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
+                    <keep>true</keep>
+                    <extension>true</extension>
+                    <verbose>true</verbose>
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                    </vmArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>InteractiveMptService</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <bindingFiles>
+                                <bindingFile>${basedir}/src/main/binding/binding-imptProxy.xml</bindingFile>
+                            </bindingFiles>
+                            <wsdlFiles>
+                                <wsdlFile>mpt-interactive-soap.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlLocation>wsdl/mpt-interactive-soap.wsdl</wsdlLocation>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> 
+                <executions> <execution> <goals> <goal>run</goal> </goals> <phase>generate-sources</phase> 
+                <configuration> <tasks> <move todir="${project.root}/rgs-library/rgs-library-imptproxy/rgs-library-imptproxy-model/src/main/java/com/igt/rgs/gle/impt/proxy/model"> 
+                <fileset dir="${basedir}/src/main/java/com/igt/rgs/gle/impt/proxy/model"></fileset> 
+                </move> </tasks> </configuration> </execution> </executions> </plugin> -->
+        </plugins>
+    </build>
+</project>

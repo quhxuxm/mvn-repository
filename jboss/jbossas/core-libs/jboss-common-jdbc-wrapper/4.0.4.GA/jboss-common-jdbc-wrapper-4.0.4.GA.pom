@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jboss.jbossas.core-libs</groupId>
+  <artifactId>jboss-common-jdbc-wrapper</artifactId>
+  <version>4.0.4.GA</version>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.igt.interactivegame.rgs</groupId>
+        <artifactId>rgs</artifactId>
+        <version>5.4.0</version>
+    </parent>
+    <artifactId>rgs-client</artifactId>
+    <packaging>pom</packaging>
+    <name>IGT Interactive Game - RGS Client</name>
+    <description>IGT Interactive Game - RGS Client</description>
+    <properties>
+        <project.root.dir>${basedir}/..</project.root.dir>
+    </properties>
+</project>

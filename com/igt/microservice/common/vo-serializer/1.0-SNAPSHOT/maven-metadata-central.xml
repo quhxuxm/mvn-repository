@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.igt.microservice.common</groupId>
+  <artifactId>vo-serializer</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20180608.064006</timestamp>
+      <buildNumber>199</buildNumber>
+    </snapshot>
+    <lastUpdated>20180608064006</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20180608.064006-199</value>
+        <updated>20180608064006</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20180608.064006-199</value>
+        <updated>20180608064006</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

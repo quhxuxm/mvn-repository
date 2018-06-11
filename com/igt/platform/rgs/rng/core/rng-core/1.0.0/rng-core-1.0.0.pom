@@ -1,0 +1,38 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+		<groupId>com.igt.platform.rgs.rng</groupId>
+		<artifactId>rng</artifactId>
+		<version>1.0.0</version>
+	</parent>
+    
+	<groupId>com.igt.platform.rgs.rng.core</groupId>
+	<artifactId>rng-core</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.thirdparty.j2ee</groupId>
+            <artifactId>j2ee</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.igt.platform.rgs.rng.RandomRequestDocument</groupId>
+            <artifactId>RandomRequestDocument</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+	</dependencies>
+	
+</project>
